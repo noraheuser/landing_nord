@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Nord Joyas</title>
+    <link rel="stylesheet" href="css/estilos.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+</head>
+<body>
+
+ <!-- NAVBAR -->
+ <header class="navbar">
+    <div class="contenedor-izquierda">
+      <div class="logo">
+        <img src="img/logo-nord.png" alt="Nord Joyas">
+      </div>
+      <nav class="menu-central">
+        <a href="#inicio">INICIO</a>
+        <a href="#productos">PRODUCTOS</a>
+        <a href="#nosotras">NOSOTROS</a>
+        <a href="#contacto">CONTACTO</a>
+      </nav>
+    </div>
+
+    <div class="iconos-derecha">
+      <img src="img/icono-carrito.png" alt="Carrito" onclick="document.getElementById('carrito').classList.toggle('visible')">
+      <img src="img/icono-buscar.png" alt="Buscar">
+    </div>
+  </header>
+
+    <div id="carrito" class="carrito-panel oculto">
+      <h3>Tu carrito</h3>
+      <p>No hay productos aún.</p>
+    </div>
+  
+  <!-- Sección 1: Imagen destacada tipo banner con texto -->
+  <div class="seccion1" id="inicio">
+    <img src="img/banner1.jpg" alt="Banner Nord Joyas" class="banner-img">
+    <div class="contenido-seccion1">
+      <h1>Amazing Jewellery Collection</h1>
+      <p>DISEÑOS ELEGANTES, HIPOALEGÉNICOS Y LIBRES DE NÍQUEL ✨</p>
+      <a href="#productos" class="boton-seccion1">Ver colección</a>
+    </div>
+  </div>
+  
+      
+
+    <!-- Sección 2: Productos -->
+    <h1 id="productos" class="titulo-productos">NUESTROS PRODUCTOS</h1>
+    <div id="div_productos" class="seccion2">
+        <div class="producto" onclick="mostrarModal('img/producto1.jpg', 'Pulsera de Perlas', 12990)">
+            <img class="imagenes" src="img/producto1.jpg" alt="Pulsera dorada">
+            <p>PULSERA DE PERLAS</p>
+        </div>
+        <div class="producto" onclick="mostrarModal('img/producto2.jpg', 'Cadena de Amor', 15990)">
+            <img class="imagenes" src="img/producto2.jpg" alt="Collar corazón">
+            <p>CADENA AMOR</p>
+        </div>
+        <div class="producto" onclick="mostrarModal('img/producto3.jpg', 'Gotas Doradas', 15990)">
+            <img class="imagenes" src="img/producto3.jpg" alt="Aros gota">
+            <p>GOTAS DORADAS</p>
+        </div>
+        <div class="producto" onclick="mostrarModal('img/producto4.jpg', 'Pulsera Corazón/León', 15990)">
+            <img class="imagenes" src="img/producto4.jpg" alt="Aros gota">
+            <p>PULSERA CORAZON/LEÓN</p>
+        </div>
+        <div class="producto" onclick="mostrarModal('img/producto4.jpg', 'Argolla Dorada', 15990)">
+            <img class="imagenes" src="img/producto5.jpg" alt="Aros gota">
+            <p>ARGOLLA DORADA</p>
+        </div>
+        <div class="producto">
+            <img class="imagenes" src="img/producto6.jpg" alt="Aros gota">
+            <p>ARGOLLAS DORADAS</p>
+        </div>
+    </div>
+
+
+    <!-- Sección 3: Sobre NORD.CL-->
+    <h1 id="nosotros" class="titulo-nosotros">SOBRE NORD.CL</h1>
+    <div id="div_texto" class="seccion3">
+        <p>Nord Joyas nace con la idea de resaltar tu belleza con piezas elegantes, hipoalergénicas y libres de níquel. Hacemos envíos a todo Chile 🇨🇱.</p>
+        <p>Conócenos en: 
+            <a href="https://www.instagram.com/nord.cl/" target="_blank"><img src="img/instagram-logo.png" alt="Instagram" class="icono-red">@nord.cl</a></p>
+    </div>
+
+    <!-- Sección 4: Formulario de contacto -->
+    <div id="div_formulario" class="seccion4">
+    <h1 id="contacto" class="titulo-contacto">CONTÁCTANOS</h1>
+        <form>
+            <label for="nombre">Nombre</label>
+            <input type="text" id="nombre" required>
+            <label for="email">Correo Electrónico</label>
+            <input type="email" id="email" required>
+            <label for="mensaje">Mensaje</label>
+            <textarea id="mensaje" required></textarea>
+            <button type="submit">Enviar</button>
+        </form>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        © 2025 Nord.cl – Todos los derechos reservados
+    </footer>
+
+
+<!--Funcionalidades-->
+<!--productos-->
+<!-- Esto es para que los productos sean clickeables y se muestre el precio y la opcion de agregar al carrito-->
+    <div id="modal-producto" class="modal oculto">
+        <div class="modal-contenido">
+        <span class="cerrar" onclick="cerrarModal()">&times;</span>
+        <img id="modal-img" src="" alt="Producto ampliado">
+        <p id="modal-nombre"></p>
+        <p id="modal-precio"></p>
+        <button onclick="agregarAlCarrito()">Agregar al carrito</button>
+        </div>
+    </div>
+
+    <script>
+        function mostrarModal(imgSrc, nombre, precio) {
+        document.getElementById('modal-img').src = imgSrc;
+        document.getElementById('modal-nombre').textContent = nombre;
+        document.getElementById('modal-precio').textContent = 'Precio: $' + precio;
+        document.getElementById('modal-producto').classList.remove('oculto');
+        }
+        
+        function cerrarModal() {
+        document.getElementById('modal-producto').classList.add('oculto');
+        }
+        
+        function agregarAlCarrito() {
+        alert("Producto agregado al carrito");
+        cerrarModal();
+        }
+    </script>
+    
+</body>
+</html>
