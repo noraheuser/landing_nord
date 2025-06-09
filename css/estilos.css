@@ -1,4 +1,4 @@
-/* Estilos generales */
+/* General */
 body {
     font-family: 'Poppins', sans-serif;
     background-color: #c1b8ad;
@@ -7,122 +7,78 @@ body {
     padding: 0;
 }
 
-
-/* Navbar */
+/* NAVBAR */
 .navbar {
     background-color: black;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 10px 40px;
-    box-shadow: 0 2px 5px rgba(204, 168, 168, 0.05);
     position: sticky;
     top: 0;
     z-index: 999;
+    flex-wrap: wrap;
 }
-  
+
 .logo img {
     height: 40px;
 }
-  
+
 .menu-central {
     display: flex;
     gap: 30px;
 }
-  
+
+.menu-central a {
+    color: #d6cbcc;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.menu-central a:hover {
+    color: #d4a373;
+    border-bottom: 2px solid #d4a373;
+}
+
 .contenedor-izquierda {
     display: flex;
     align-items: center;
     gap: 40px;
 }
-  
-  /* Ajusta la separación de los links */
-.menu-central a {
-    margin-right: 20px;
-    color: #d6cbcc;
-    text-decoration: none;
-    font-weight: bold;
-}
-  
-.menu-central a:hover {
-    color: #d4a373;
-    border-bottom: 2px solid #d4a373;
-}
-  
-.iconos-derecha img {
-    height: 20px;
-    margin-left: 20px;
-    cursor: pointer;
-}
 
-/* carrito */
-.carrito-panel {
-    position: fixed;
-    top: 80px;
-    right: 20px;
-    width: 280px;
-    background-color: white;
-    color: #333;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    padding: 20px;
-    box-shadow: 0px 2px 10px rgba(0,0,0,0.2);
-    z-index: 1000;
-    display: none;
-    font-size: 0.95rem;
-  }
-  
-.carrito-panel.visible {
-    display: block;
-  }
-  
-.oculto {
-    display: none;
-  }
-
-
-/* Títulos */
-h1 {
-    text-align: center;
-    margin-top: 40px;
-    color: #c6b0a0;
-}
-
-/* Sección 1: Banner */
+/* Banner Sección 1 */
 .seccion1 {
     position: relative;
     height: auto;
     overflow: hidden;
-  }
-  
+}
+
 .banner-img {
     width: 100%;
     height: auto;
     display: block;
 }
-  
+
 .contenido-seccion1 {
     position: absolute;
-    top: 20%;        /* Baja un poco desde arriba */
-    left: 10%;       /* Alineado desde la izquierda */
-    transform: none; /* Quitamos el centrado vertical */
+    top: 20%;
+    left: 10%;
     color: white;
     max-width: 1000px;
-    text-align: left; /* Alineación del texto a la izquierda */
+    text-align: left;
     z-index: 1;
 }
-  
+
 .contenido-seccion1 h1 {
-    font-size: 5rem;
+    font-size: 3.5rem;
     margin-bottom: 30px;
-    text-align: left; 
 }
-  
+
 .contenido-seccion1 p {
     font-size: 1.2rem;
     margin-bottom: 40px;
 }
-  
+
 .boton-seccion1 {
     padding: 10px 20px;
     background-color: #d4a373;
@@ -131,13 +87,14 @@ h1 {
     border-radius: 5px;
     font-weight: bold;
 }
-  
+
 .boton-seccion1:hover {
     background-color: #b6794f;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.2);
 }
 
-
 /* Sección 2: Productos */
+
 .seccion2 {
     display: flex;
     flex-wrap: wrap;
@@ -146,13 +103,13 @@ h1 {
     padding: 40px 20px;
     background-color: #c1b8ad;
 }
+
 .titulo-productos {
     text-align: center;
-    margin-bottom: 1%;
+    font-size: 2.4rem;
+    margin-bottom: 20px;
     color: #5c4435;
-    background-color: #c1b8ad;
-  }
-
+}
 .producto {
     width: 400px;
     text-align: center;
@@ -160,97 +117,106 @@ h1 {
     padding: 15px;
     border-radius: 10px;
     box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* ← transición suave */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Efecto al pasar el mouse */
 .producto:hover {
-    transform: translateY(-10px); /* ← se eleva */
-    box-shadow: 0px 12px 20px rgba(0,0,0,0.2); /* ← sombra más intensa */
+    transform: translateY(-10px);
+    box-shadow: 0px 12px 20px rgba(0,0,0,0.2);
 }
 
-.producto p {
-    margin-top: 10px;
-}
 .imagenes {
     width: 100%;
     height: auto;
     border-radius: 10px;
     object-fit: cover;
 }
-/* Mostrar productos con precio y agregar al carro */
+
+.producto p {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+/* Modal de producto */
 .modal {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.6);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 1000;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
 }
+
 .modal-contenido {
-  background: #fff;
-  padding: 20px;
-  border-radius: 10px;
-  width: 400px;
-  text-align: center;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    width: 400px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
+
 .modal-contenido img {
-  width: 100%;
-  border-radius: 10px;
-  margin-bottom: 15px;
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 15px;
 }
+
 .cerrar {
-  position: absolute;
-  top: 20px;
-  right: 30px;
-  font-size: 2rem;
-  color: white;
-  cursor: pointer;
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 2rem;
+    color: white;
+    cursor: pointer;
 }
 
-.modal.oculto {
-    display: none !important;
-  }
+.oculto {
+    display: none;
+}
 
+/* Sección 3: Sobre Nord.cl */
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* Sección 3: sobre nord.cl */
 .seccion3 {
     text-align: center;
-    padding: 20px 20px;
+    padding: 30px 50px;
+    background-color: #f7f2ec;
+    font-size: 1.8rem;
+    line-height: 1.6;
+    color: #5c4435;
 }
 
 .titulo-nosotros {
+    text-align: center;
+    font-size: 2.4rem;
+    margin-bottom: 20px;
     color: #5c4435;
-    font-size: 2rem;
-  }
-  
+}
+
+.seccion3 a {
+    font-weight: bold;
+    color: #d4a373;
+    text-decoration: none;
+}
+
+.seccion3 a:hover {
+    text-decoration: underline;
+    color: #b6794f;
+}
+
 .icono-red {
     height: 20px;
     vertical-align: middle;
     margin-right: 8px;
 }
 
-/* Sección 4: formulario de contacto */
+/* Sección 4: Formulario */
 .seccion4 {
-    background-color: #f3eae2;
+    background-color: #c1b8ad;
     padding: 40px 20px;
     text-align: center;
 }
@@ -258,8 +224,9 @@ h1 {
 .titulo-contacto {
     color: #5c4435;
     font-size: 2.2rem;
-    background-color: #f3eae2;
-  }
+    margin-bottom: 20px;
+}
+
 form {
     max-width: 400px;
     margin: auto;
@@ -291,9 +258,68 @@ button:hover {
 
 /* Footer */
 footer {
-    background-color: #f0d5c1;
+    background-color: #000000;
     text-align: center;
+    color: #c2ada3;
     padding: 15px;
     margin-top: 40px;
     font-size: 0.9rem;
+}
+
+/* Responsive para que no se deforme el contenido de la pagina al cambiar tamaño */
+@media screen and (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px 20px;
+    }
+
+    .menu-central {
+        flex-direction: column;
+        width: 100%;
+        gap: 10px;
+        margin-top: 10px;
+    }
+
+    .iconos-derecha {
+        align-self: flex-end;
+        margin-top: 10px;
+    }
+
+    .contenido-seccion1 {
+        top: 10%;
+        left: 5%;
+        max-width: 90%;
+    }
+
+    .contenido-seccion1 h1 {
+        font-size: 2rem;
+    }
+
+    .contenido-seccion1 p {
+        font-size: 1rem;
+    }
+
+    .producto {
+        width: 90%;
+    }
+
+    .modal-contenido {
+        width: 90%;
+        max-width: 360px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .navbar {
+        padding: 8px;
+    }
+
+    .menu-central a {
+        font-size: 0.9rem;
+    }
+
+    .contenido-seccion1 h1 {
+        font-size: 1.8rem;
+    }
 }
